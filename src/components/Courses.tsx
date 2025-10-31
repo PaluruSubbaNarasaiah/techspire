@@ -21,7 +21,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 49999,
       features: ['HTML5, CSS3, JavaScript ES6+', 'React.js with Hooks', 'Node.js & Express.js', 'MongoDB & PostgreSQL', 'RESTful APIs', 'AWS Cloud Deployment'],
       is_popular: true,
-      tag: 'Most Popular'
+      tag: 'Most Popular',
+      image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=250&fit=crop'
     },
     {
       id: '2',
@@ -33,7 +34,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 59999,
       features: ['Python Programming', 'Data Analysis with Pandas', 'Machine Learning Algorithms', 'Deep Learning with TensorFlow', 'Data Visualization', 'Statistical Analysis'],
       is_popular: false,
-      tag: 'High Demand'
+      tag: 'High Demand',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop'
     },
     {
       id: '3',
@@ -45,7 +47,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 39999,
       features: ['AWS Core Services', 'Serverless with Lambda', 'Container Services', 'Networking & Security', 'Monitoring & Logging', 'Infrastructure as Code'],
       is_popular: false,
-      tag: 'Quick Start'
+      tag: 'Quick Start',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop'
     },
     {
       id: '4',
@@ -57,7 +60,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 44999,
       features: ['React Native', 'Flutter & Dart', 'iOS & Android Development', 'Firebase Integration', 'App Store Deployment', 'Push Notifications'],
       is_popular: false,
-      tag: 'Trending'
+      tag: 'Trending',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop'
     },
     {
       id: '5',
@@ -69,7 +73,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 54999,
       features: ['Docker & Kubernetes', 'Jenkins CI/CD', 'Terraform', 'AWS/Azure DevOps', 'Monitoring & Logging', 'Infrastructure as Code'],
       is_popular: false,
-      tag: 'Industry Ready'
+      tag: 'Industry Ready',
+      image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=400&h=250&fit=crop'
     },
     {
       id: '6',
@@ -81,7 +86,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 52999,
       features: ['Ethical Hacking', 'Network Security', 'Penetration Testing', 'Security Analysis', 'Incident Response', 'Compliance & Governance'],
       is_popular: false,
-      tag: 'High Salary'
+      tag: 'High Salary',
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop'
     },
     {
       id: '7',
@@ -93,7 +99,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 34999,
       features: ['Figma & Adobe XD', 'User Research', 'Wireframing & Prototyping', 'Design Systems', 'Usability Testing', 'Responsive Design'],
       is_popular: false,
-      tag: 'Creative'
+      tag: 'Creative',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop'
     },
     {
       id: '8',
@@ -105,7 +112,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 69999,
       features: ['Neural Networks', 'Deep Learning', 'Computer Vision', 'Natural Language Processing', 'AI Ethics', 'Model Deployment'],
       is_popular: false,
-      tag: 'Future Tech'
+      tag: 'Future Tech',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop'
     },
     {
       id: '9',
@@ -117,7 +125,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 57999,
       features: ['Solidity Programming', 'Smart Contracts', 'Web3.js', 'DeFi Development', 'NFT Creation', 'Blockchain Security'],
       is_popular: false,
-      tag: 'Emerging Tech'
+      tag: 'Emerging Tech',
+      image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop'
     },
     {
       id: '10',
@@ -129,7 +138,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 24999,
       features: ['Python Fundamentals', 'Object-Oriented Programming', 'Web Scraping', 'API Development', 'Database Integration', 'Automation Scripts'],
       is_popular: false,
-      tag: 'Beginner Friendly'
+      tag: 'Beginner Friendly',
+      image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop'
     },
     {
       id: '11',
@@ -141,7 +151,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 54999,
       features: ['Core Java', 'Spring Boot', 'Hibernate', 'Microservices', 'REST APIs', 'Database Design'],
       is_popular: false,
-      tag: 'Enterprise Ready'
+      tag: 'Enterprise Ready',
+      image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop'
     },
     {
       id: '12',
@@ -153,7 +164,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       price: 29999,
       features: ['SEO & SEM', 'Social Media Marketing', 'Content Marketing', 'Email Marketing', 'Analytics', 'PPC Campaigns'],
       is_popular: false,
-      tag: 'Business Growth'
+      tag: 'Business Growth',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop'
     }
   ];
 
@@ -198,24 +210,31 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 hover-lift animate-fadeInUp"
               style={{animationDelay: `${idx * 0.1}s`}}
             >
-              {course.tag && (
-                <div className={`text-white text-center py-2 font-semibold text-sm ${
-                  course.tag === 'Most Popular' ? 'bg-gradient-to-r from-orange-500 to-red-500' :
-                  course.tag === 'High Demand' ? 'bg-gradient-to-r from-green-500 to-green-600' :
-                  course.tag === 'Quick Start' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
-                  course.tag === 'Trending' ? 'bg-gradient-to-r from-purple-500 to-purple-600' :
-                  course.tag === 'Industry Ready' ? 'bg-gradient-to-r from-indigo-500 to-indigo-600' :
-                  course.tag === 'High Salary' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' :
-                  course.tag === 'Creative' ? 'bg-gradient-to-r from-pink-500 to-pink-600' :
-                  course.tag === 'Future Tech' ? 'bg-gradient-to-r from-cyan-500 to-cyan-600' :
-                  course.tag === 'Emerging Tech' ? 'bg-gradient-to-r from-teal-500 to-teal-600' :
-                  course.tag === 'Beginner Friendly' ? 'bg-gradient-to-r from-lime-500 to-lime-600' :
-                  course.tag === 'Enterprise Ready' ? 'bg-gradient-to-r from-slate-500 to-slate-600' :
-                  'bg-gradient-to-r from-rose-500 to-rose-600'
-                }`}>
-                  {course.tag}
-                </div>
-              )}
+              <div className="relative">
+                <img 
+                  src={course.image} 
+                  alt={course.title}
+                  className="w-full h-48 object-cover"
+                />
+                {course.tag && (
+                  <div className={`absolute top-0 left-0 text-white px-3 py-1 font-semibold text-sm rounded-br-lg ${
+                    course.tag === 'Most Popular' ? 'bg-gradient-to-r from-orange-500 to-red-500' :
+                    course.tag === 'High Demand' ? 'bg-gradient-to-r from-green-500 to-green-600' :
+                    course.tag === 'Quick Start' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
+                    course.tag === 'Trending' ? 'bg-gradient-to-r from-purple-500 to-purple-600' :
+                    course.tag === 'Industry Ready' ? 'bg-gradient-to-r from-indigo-500 to-indigo-600' :
+                    course.tag === 'High Salary' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' :
+                    course.tag === 'Creative' ? 'bg-gradient-to-r from-pink-500 to-pink-600' :
+                    course.tag === 'Future Tech' ? 'bg-gradient-to-r from-cyan-500 to-cyan-600' :
+                    course.tag === 'Emerging Tech' ? 'bg-gradient-to-r from-teal-500 to-teal-600' :
+                    course.tag === 'Beginner Friendly' ? 'bg-gradient-to-r from-lime-500 to-lime-600' :
+                    course.tag === 'Enterprise Ready' ? 'bg-gradient-to-r from-slate-500 to-slate-600' :
+                    'bg-gradient-to-r from-rose-500 to-rose-600'
+                  }`}>
+                    {course.tag}
+                  </div>
+                )}
+              </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <span className="bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">

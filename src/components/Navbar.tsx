@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 
 interface NavbarProps {
   onEnrollClick: (course: string) => void;
@@ -37,11 +36,7 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
             <Link to="/contact" className={`transition ${location.pathname === '/contact' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'}`}>Contact</Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center text-sm text-gray-600">
-              <Phone className="h-4 w-4 mr-1" />
-              <span>+91 9876543210</span>
-            </div>
+          <div className="flex items-center">
             <button 
               onClick={() => onEnrollClick()}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
