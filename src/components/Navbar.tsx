@@ -23,9 +23,9 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
              <img 
                 src="/logo.png" 
                 alt="TechSpire Academy Logo" 
-                className="w-59 h-40 mr-5"
+                className="w-59 h-40 mr-3"
               />
-            <h1 className="text-2xl mr-2 font-bold text-blue-600">Tech Spire Academy</h1>
+            <h1 className="text-2xl font-bold text-blue-600">Tech Spire Academy</h1>
           </Link>
 
           <div className="flex items-center space-x-8">
