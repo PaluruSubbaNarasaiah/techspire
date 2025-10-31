@@ -89,61 +89,85 @@ export default function SuccessStories() {
   const filteredStories = filter === 'All' ? successStories : successStories.filter(story => story.course === filter);
 
   const downloadPlacementReport = () => {
-    const reportContent = `
-TECH SPIRE ACADEMY - PLACEMENT REPORT 2024
-
-📊 OVERALL STATISTICS:
-• Total Students Trained: 5,000+
-• Overall Placement Rate: 95%
-• Average Salary Package: ₹16.2 LPA
-• Highest Package: ₹22 LPA
-• Companies Partnered: 500+
-
-📈 COURSE-WISE BREAKDOWN:
-
-Full Stack Web Development:
-• Students Placed: 2,100+
-• Placement Rate: 96%
-• Average Package: ₹15.8 LPA
-• Top Companies: Google, Flipkart, Zomato, PayTM
-
-Data Science & Machine Learning:
-• Students Placed: 1,800+
-• Placement Rate: 94%
-• Average Package: ₹17.5 LPA
-• Top Companies: Microsoft, Swiggy, Ola, Myntra
-
-AWS Cloud Computing:
-• Students Placed: 1,100+
-• Placement Rate: 93%
-• Average Package: ₹14.2 LPA
-• Top Companies: Amazon, Accenture, TCS, Infosys
-
-🏢 TOP HIRING PARTNERS:
-• Google • Microsoft • Amazon • Flipkart
-• Swiggy • Zomato • PayTM • Ola • Myntra
-• Accenture • TCS • Infosys • Wipro
-
-📍 PLACEMENT LOCATIONS:
-• Bangalore: 45%
-• Hyderabad: 20%
-• Mumbai: 15%
-• Pune: 10%
-• Chennai: 5%
-• Others: 5%
-
-Generated on: ${new Date().toLocaleDateString()}
-    `;
-
-    const blob = new Blob([reportContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'TechSpire_Placement_Report_2024.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    import('jspdf').then(({ jsPDF }) => {
+      const doc = new jsPDF();
+      
+      // Header
+      doc.setFillColor(37, 99, 235);
+      doc.rect(0, 0, 210, 40, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(24);
+      doc.text('TECH SPIRE ACADEMY', 105, 20, { align: 'center' });
+      doc.setFontSize(16);
+      doc.text('PLACEMENT REPORT 2024', 105, 30, { align: 'center' });
+      
+      // Reset text color
+      doc.setTextColor(0, 0, 0);
+      
+      // Overall Statistics
+      doc.setFontSize(18);
+      doc.setTextColor(37, 99, 235);
+      doc.text('📊 OVERALL STATISTICS', 20, 60);
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+      doc.text('• Total Students Trained: 5,000+', 20, 75);
+      doc.text('• Overall Placement Rate: 95%', 20, 85);
+      doc.text('• Average Salary Package: ₹16.2 LPA', 20, 95);
+      doc.text('• Highest Package: ₹22 LPA', 20, 105);
+      doc.text('• Companies Partnered: 500+', 20, 115);
+      
+      // Course-wise Breakdown
+      doc.setFontSize(18);
+      doc.setTextColor(37, 99, 235);
+      doc.text('📈 COURSE-WISE BREAKDOWN', 20, 135);
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+      
+      // Full Stack
+      doc.setFontSize(14);
+      doc.setTextColor(34, 197, 94);
+      doc.text('Full Stack Web Development:', 20, 150);
+      doc.setFontSize(11);
+      doc.setTextColor(0, 0, 0);
+      doc.text('Students Placed: 2,100+ | Placement Rate: 96% | Avg Package: ₹15.8 LPA', 20, 160);
+      doc.text('Top Companies: Google, Flipkart, Zomato, PayTM', 20, 170);
+      
+      // Data Science
+      doc.setFontSize(14);
+      doc.setTextColor(34, 197, 94);
+      doc.text('Data Science & Machine Learning:', 20, 185);
+      doc.setFontSize(11);
+      doc.setTextColor(0, 0, 0);
+      doc.text('Students Placed: 1,800+ | Placement Rate: 94% | Avg Package: ₹17.5 LPA', 20, 195);
+      doc.text('Top Companies: Microsoft, Swiggy, Ola, Myntra', 20, 205);
+      
+      // AWS Cloud
+      doc.setFontSize(14);
+      doc.setTextColor(34, 197, 94);
+      doc.text('AWS Cloud Computing:', 20, 220);
+      doc.setFontSize(11);
+      doc.setTextColor(0, 0, 0);
+      doc.text('Students Placed: 1,100+ | Placement Rate: 93% | Avg Package: ₹14.2 LPA', 20, 230);
+      doc.text('Top Companies: Amazon, Accenture, TCS, Infosys', 20, 240);
+      
+      // Top Hiring Partners
+      doc.setFontSize(18);
+      doc.setTextColor(37, 99, 235);
+      doc.text('🏢 TOP HIRING PARTNERS', 20, 260);
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+      doc.text('Google • Microsoft • Amazon • Flipkart • Swiggy • Zomato', 20, 275);
+      doc.text('PayTM • Ola • Myntra • Accenture • TCS • Infosys • Wipro', 20, 285);
+      
+      // Footer
+      doc.setFillColor(37, 99, 235);
+      doc.rect(0, 290, 210, 7, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(10);
+      doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 105, 294, { align: 'center' });
+      
+      doc.save('TechSpire_Placement_Report_2024.pdf');
+    });
   };
 
   return (

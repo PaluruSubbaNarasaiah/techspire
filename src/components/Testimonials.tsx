@@ -102,16 +102,32 @@ export default function Testimonials() {
               </button>
               <button 
                 onClick={() => {
-                  const reportContent = `TECH SPIRE ACADEMY - PLACEMENT REPORT 2024\n\n📊 OVERALL STATISTICS:\n• Total Students Trained: 5,000+\n• Overall Placement Rate: 95%\n• Average Salary Package: ₹16.2 LPA\n• Highest Package: ₹22 LPA\n• Companies Partnered: 500+\n\nGenerated on: ${new Date().toLocaleDateString()}`;
-                  const blob = new Blob([reportContent], { type: 'text/plain' });
-                  const url = URL.createObjectURL(blob);
-                  const a = document.createElement('a');
-                  a.href = url;
-                  a.download = 'TechSpire_Placement_Report_2024.txt';
-                  document.body.appendChild(a);
-                  a.click();
-                  document.body.removeChild(a);
-                  URL.revokeObjectURL(url);
+                  import('jspdf').then(({ jsPDF }) => {
+                    const doc = new jsPDF();
+                    doc.setFillColor(37, 99, 235);
+                    doc.rect(0, 0, 210, 40, 'F');
+                    doc.setTextColor(255, 255, 255);
+                    doc.setFontSize(24);
+                    doc.text('TECH SPIRE ACADEMY', 105, 20, { align: 'center' });
+                    doc.setFontSize(16);
+                    doc.text('PLACEMENT REPORT 2024', 105, 30, { align: 'center' });
+                    doc.setTextColor(0, 0, 0);
+                    doc.setFontSize(18);
+                    doc.setTextColor(37, 99, 235);
+                    doc.text('📊 OVERALL STATISTICS', 20, 60);
+                    doc.setFontSize(12);
+                    doc.setTextColor(0, 0, 0);
+                    doc.text('• Total Students Trained: 5,000+', 20, 75);
+                    doc.text('• Overall Placement Rate: 95%', 20, 85);
+                    doc.text('• Average Salary Package: ₹16.2 LPA', 20, 95);
+                    doc.text('• Highest Package: ₹22 LPA', 20, 105);
+                    doc.setFillColor(37, 99, 235);
+                    doc.rect(0, 290, 210, 7, 'F');
+                    doc.setTextColor(255, 255, 255);
+                    doc.setFontSize(10);
+                    doc.text(`Generated: ${new Date().toLocaleDateString()}`, 105, 294, { align: 'center' });
+                    doc.save('TechSpire_Placement_Report_2024.pdf');
+                  });
                 }}
                 className="bg-gray-100 text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-200 transition text-lg font-semibold"
               >
