@@ -7,18 +7,18 @@ interface HeroProps {
 export default function Hero({ onEnrollClick }: HeroProps) {
   return (
     <section id="home" className="pt-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fadeInUp">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="animate-fadeInUp text-center md:text-left">
             <div className="flex items-center gap-4 mb-6">
                            <div>
-                <h1 className="text-5xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                   Transform Your Career with
                   <span className="text-blue-600"> Tech Spire Academy</span>
                 </h1>
               </div>
             </div>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-lg sm:text-xl text-gray-600 mb-8">
               Master in-demand tech skills with industry experts. 100% placement assistance and hands-on training with real-world projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -35,7 +35,7 @@ export default function Hero({ onEnrollClick }: HeroProps) {
                 Book Free Demo
               </button>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               <div className="text-center">
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
                   <GraduationCap className="h-8 w-8 text-blue-600" />
@@ -71,7 +71,7 @@ export default function Hero({ onEnrollClick }: HeroProps) {
               <img
                 src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Students learning"
-                className="rounded-lg shadow-lg w-full h-96 object-cover"
+                className="rounded-lg shadow-lg w-full h-64 sm:h-96 object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-6 max-w-xs">
                 <p className="text-sm font-semibold text-gray-900 mb-2">Next Batch Starting</p>

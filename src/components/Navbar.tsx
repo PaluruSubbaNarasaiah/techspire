@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Star, Award } from 'lucide-react';
+import { ChevronDown, Star, Award, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onEnrollClick: (course: string) => void;
@@ -9,6 +9,7 @@ interface NavbarProps {
 export default function Navbar({ onEnrollClick }: NavbarProps) {
   const location = useLocation();
   const [showCourses, setShowCourses] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const popularCourses = [
     { name: 'Full Stack Web Development', tag: 'Most Popular', color: 'text-orange-600' },
@@ -28,7 +29,7 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
               <img 
                 src="/logo.png" 
                 alt="TechSpire Academy Logo" 
-                className="w-40 h-40 mr-3   transition-all duration-300"
+                className="w-49 h-40 mr-3   transition-all duration-300"
               />
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
             </div>
@@ -38,8 +39,8 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Navigation Links */}
-          <div className="flex items-center space-x-1">
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-1">
             <Link 
               to="/" 
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
@@ -146,8 +147,8 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
             </Link>
           </div>
 
-          {/* CTA Button */}
-          <div className="flex items-center">
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:flex items-center">
             <button 
               onClick={() => onEnrollClick()}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2"
@@ -156,7 +157,77 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
               Enroll Now
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg text-gray-700 hover:bg-blue-50 transition-colors"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-blue-100 bg-white/95 backdrop-blur-md">
+            <div className="px-4 py-4 space-y-2">
+              <Link 
+                to="/" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${location.pathname === '/' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-blue-50'}`}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/courses" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${location.pathname === '/courses' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-blue-50'}`}
+              >
+                Courses
+              </Link>
+              <Link 
+                to="/about" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${location.pathname === '/about' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-blue-50'}`}
+              >
+                About
+              </Link>
+              <Link 
+                to="/admissions" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${location.pathname === '/admissions' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-blue-50'}`}
+              >
+                Admissions
+              </Link>
+              <Link 
+                to="/success-stories" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${location.pathname === '/success-stories' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-blue-50'}`}
+              >
+                Success Stories
+              </Link>
+              <Link 
+                to="/contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${location.pathname === '/contact' ? 'bg-blue-100 text-blue-700' : 'text-gray-700 hover:bg-blue-50'}`}
+              >
+                Contact
+              </Link>
+              <button 
+                onClick={() => {
+                  onEnrollClick();
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
+              >
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                Enroll Now
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

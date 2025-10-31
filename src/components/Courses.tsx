@@ -187,12 +187,12 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-4">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full transition ${
+              className={`px-3 sm:px-6 py-2 text-sm sm:text-base rounded-full transition ${
                 filter === category
                   ? 'bg-blue-600 text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
@@ -203,7 +203,7 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredCourses.map((course, idx) => (
             <div
               key={course.id}
