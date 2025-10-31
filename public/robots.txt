@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techspireacademy.com/sitemap.xml
