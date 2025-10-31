@@ -10,6 +10,11 @@ import About from './pages/About';
 import CoursesPage from './pages/CoursesPage';
 import Contact from './pages/Contact';
 import Admissions from './pages/Admissions';
+import SuccessStories from './pages/SuccessStories';
+import FAQ from './pages/FAQ';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import RefundPolicy from './pages/RefundPolicy';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,6 +51,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<CoursesPage onEnrollClick={openEnrollForm} />} />
           <Route path="/admissions" element={<Admissions onEnrollClick={openEnrollForm} />} />
+          <Route path="/success-stories" element={<SuccessStories />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

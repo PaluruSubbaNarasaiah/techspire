@@ -94,10 +94,27 @@ export default function Testimonials() {
               Be the next success story. Start your journey with Tech Spire Academy today and unlock your potential.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition text-lg font-semibold shadow-lg">
+              <button 
+                onClick={() => window.location.href = '/success-stories'}
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition text-lg font-semibold shadow-lg"
+              >
                 View All Success Stories
               </button>
-              <button className="bg-gray-100 text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-200 transition text-lg font-semibold">
+              <button 
+                onClick={() => {
+                  const reportContent = `TECH SPIRE ACADEMY - PLACEMENT REPORT 2024\n\n📊 OVERALL STATISTICS:\n• Total Students Trained: 5,000+\n• Overall Placement Rate: 95%\n• Average Salary Package: ₹16.2 LPA\n• Highest Package: ₹22 LPA\n• Companies Partnered: 500+\n\nGenerated on: ${new Date().toLocaleDateString()}`;
+                  const blob = new Blob([reportContent], { type: 'text/plain' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'TechSpire_Placement_Report_2024.txt';
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+                  URL.revokeObjectURL(url);
+                }}
+                className="bg-gray-100 text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-200 transition text-lg font-semibold"
+              >
                 Download Placement Report
               </button>
             </div>

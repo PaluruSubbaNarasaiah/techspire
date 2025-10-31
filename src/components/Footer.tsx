@@ -85,9 +85,9 @@ export default function Footer() {
               © 2025 Tech Spire Academy. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition">Refund Policy</a>
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-400 transition">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="text-gray-400 hover:text-blue-400 transition">Terms of Service</Link>
+              <Link to="/refund-policy" className="text-gray-400 hover:text-blue-400 transition">Refund Policy</Link>
             </div>
           </div>
         </div>

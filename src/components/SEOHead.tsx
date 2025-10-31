@@ -26,6 +26,16 @@ const pageData = {
     title: 'Contact Tech Spire Academy - Get in Touch for Course Inquiries',
     description: 'Contact Tech Spire Academy for course inquiries, admissions, and career guidance. Located in Bangalore with online support. Call +91 9876543210.',
     keywords: 'tech academy contact, course inquiry, admission help, career guidance'
+  },
+  '/success-stories': {
+    title: 'Success Stories - Tech Spire Academy Alumni Achievements | 95% Placement Rate',
+    description: 'Read inspiring success stories of Tech Spire Academy graduates. 5000+ students placed at top companies like Google, Microsoft, Amazon with average ₹16.2 LPA package.',
+    keywords: 'tech academy success stories, student placements, career transformation, coding bootcamp alumni'
+  },
+  '/faq': {
+    title: 'FAQ - Frequently Asked Questions | Tech Spire Academy',
+    description: 'Get answers to common questions about Tech Spire Academy courses, admission process, placement assistance, payment options, and certification.',
+    keywords: 'tech academy FAQ, course questions, admission help, placement assistance, coding bootcamp queries'
   }
 };
 

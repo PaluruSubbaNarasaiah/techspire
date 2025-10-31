@@ -208,7 +208,13 @@ export default function Contact() {
                   Chat with our support team for instant assistance with course selection, 
                   technical issues, or general inquiries.
                 </p>
-                <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+                <button 
+                  onClick={() => {
+                    const chatButton = document.querySelector('[class*="fixed bottom-6 right-6"]') as HTMLElement;
+                    if (chatButton) chatButton.click();
+                  }}
+                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition"
+                >
                   Start Live Chat
                 </button>
               </div>
@@ -220,7 +226,10 @@ export default function Contact() {
                   Find answers to common questions about our courses, admission process, 
                   and career support services.
                 </p>
-                <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition">
+                <button 
+                  onClick={() => window.open('/faq', '_blank')}
+                  className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition"
+                >
                   View FAQ
                 </button>
               </div>

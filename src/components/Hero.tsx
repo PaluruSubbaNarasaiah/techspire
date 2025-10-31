@@ -23,7 +23,7 @@ export default function Hero({ onEnrollClick }: HeroProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
-                onClick={() => onEnrollClick()}
+                onClick={() => window.location.href = '/courses'}
                 className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition text-lg font-semibold shadow-lg"
               >
                 Explore Courses

@@ -25,9 +25,7 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         'Node.js & Express.js Backend',
         'MongoDB & PostgreSQL Databases',
         'RESTful APIs & GraphQL',
-        'AWS Cloud Deployment',
-        'Git Version Control',
-        'Testing with Jest & Cypress'
+        'AWS Cloud Deployment'
       ],
       modules: [
         'Frontend Fundamentals (4 weeks)',
@@ -60,9 +58,7 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         'Machine Learning Algorithms',
         'Deep Learning with TensorFlow',
         'Data Visualization',
-        'Statistical Analysis',
-        'Big Data with Spark',
-        'MLOps & Model Deployment'
+        'Statistical Analysis'
       ],
       modules: [
         'Python for Data Science (4 weeks)',
@@ -95,9 +91,7 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         'Container Services (ECS, EKS)',
         'Networking & Security',
         'Monitoring & Logging',
-        'Infrastructure as Code',
-        'Cost Optimization',
-        'AWS Certification Prep'
+        'Infrastructure as Code'
       ],
       modules: [
         'AWS Fundamentals (3 weeks)',
@@ -113,10 +107,208 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         'Microservices Architecture',
         'Disaster Recovery Setup'
       ]
+    },
+    {
+      id: 4,
+      title: 'Mobile App Development',
+      category: 'Mobile Development',
+      duration: '5 months',
+      level: 'Intermediate',
+      price: 44999,
+      rating: 4.6,
+      students: 450,
+      description: 'Build native and cross-platform mobile apps with React Native and Flutter',
+      features: [
+        'React Native Development',
+        'Flutter & Dart Programming',
+        'iOS & Android Development',
+        'Firebase Integration',
+        'App Store Deployment',
+        'Push Notifications'
+      ],
+      modules: [
+        'Mobile Development Basics (3 weeks)',
+        'React Native (6 weeks)',
+        'Flutter Development (6 weeks)',
+        'Backend Integration (3 weeks)',
+        'App Store Publishing (2 weeks)',
+        'Advanced Features (2 weeks)'
+      ],
+      projects: [
+        'Social Media App',
+        'E-commerce Mobile App',
+        'Food Delivery App',
+        'Fitness Tracking App'
+      ]
+    },
+    {
+      id: 5,
+      title: 'DevOps Engineering',
+      category: 'DevOps',
+      duration: '5 months',
+      level: 'Advanced',
+      price: 54999,
+      rating: 4.7,
+      students: 350,
+      description: 'Master CI/CD, containerization, and cloud infrastructure automation',
+      features: [
+        'Docker & Kubernetes',
+        'Jenkins CI/CD Pipelines',
+        'Terraform Infrastructure',
+        'AWS/Azure DevOps',
+        'Monitoring & Logging',
+        'Security & Compliance'
+      ],
+      modules: [
+        'DevOps Fundamentals (3 weeks)',
+        'Containerization (4 weeks)',
+        'CI/CD Pipelines (4 weeks)',
+        'Infrastructure as Code (4 weeks)',
+        'Monitoring & Security (3 weeks)',
+        'Cloud DevOps (2 weeks)'
+      ],
+      projects: [
+        'Automated Deployment Pipeline',
+        'Microservices Architecture',
+        'Infrastructure Automation',
+        'Monitoring Dashboard'
+      ]
+    },
+    {
+      id: 6,
+      title: 'UI/UX Design',
+      category: 'Design',
+      duration: '4 months',
+      level: 'Beginner to Intermediate',
+      price: 34999,
+      rating: 4.5,
+      students: 520,
+      description: 'Create stunning user interfaces and experiences with modern design tools',
+      features: [
+        'Figma & Adobe XD',
+        'User Research Methods',
+        'Wireframing & Prototyping',
+        'Design Systems',
+        'Usability Testing',
+        'Responsive Design'
+      ],
+      modules: [
+        'Design Fundamentals (3 weeks)',
+        'User Research (3 weeks)',
+        'Wireframing & Prototyping (4 weeks)',
+        'Visual Design (4 weeks)',
+        'Design Systems (3 weeks)',
+        'Portfolio Development (3 weeks)'
+      ],
+      projects: [
+        'Mobile App Redesign',
+        'E-commerce Website UI',
+        'Dashboard Design',
+        'Design System Creation'
+      ]
+    },
+    {
+      id: 7,
+      title: 'Python Programming',
+      category: 'Programming',
+      duration: '3 months',
+      level: 'Beginner',
+      price: 24999,
+      rating: 4.6,
+      students: 680,
+      description: 'Master Python from basics to advanced with real-world applications',
+      features: [
+        'Python Fundamentals',
+        'Object-Oriented Programming',
+        'Web Scraping with BeautifulSoup',
+        'API Development with Flask',
+        'Database Integration',
+        'Automation Scripts'
+      ],
+      modules: [
+        'Python Basics (3 weeks)',
+        'Data Structures (2 weeks)',
+        'OOP Concepts (3 weeks)',
+        'Web Development (3 weeks)',
+        'Database & APIs (2 weeks)',
+        'Project Development (3 weeks)'
+      ],
+      projects: [
+        'Web Scraper Application',
+        'REST API Development',
+        'Automation Tool',
+        'Data Analysis Dashboard'
+      ]
+    },
+    {
+      id: 8,
+      title: 'Java Full Stack',
+      category: 'Programming',
+      duration: '7 months',
+      level: 'Intermediate',
+      price: 54999,
+      rating: 4.7,
+      students: 420,
+      description: 'Complete Java development with Spring Boot and modern frameworks',
+      features: [
+        'Core Java Programming',
+        'Spring Boot Framework',
+        'Hibernate ORM',
+        'Microservices Architecture',
+        'REST API Development',
+        'Database Design'
+      ],
+      modules: [
+        'Java Fundamentals (4 weeks)',
+        'Advanced Java (4 weeks)',
+        'Spring Framework (6 weeks)',
+        'Database Integration (3 weeks)',
+        'Microservices (4 weeks)',
+        'Project Development (4 weeks)'
+      ],
+      projects: [
+        'E-commerce Backend',
+        'Banking System',
+        'Microservices Application',
+        'Enterprise Web App'
+      ]
+    },
+    {
+      id: 9,
+      title: 'Digital Marketing',
+      category: 'Marketing',
+      duration: '4 months',
+      level: 'Beginner to Intermediate',
+      price: 29999,
+      rating: 4.4,
+      students: 750,
+      description: 'Master online marketing strategies and grow businesses digitally',
+      features: [
+        'SEO & Search Marketing',
+        'Social Media Marketing',
+        'Content Marketing Strategy',
+        'Email Marketing Campaigns',
+        'Google Analytics',
+        'PPC & Ad Campaigns'
+      ],
+      modules: [
+        'Digital Marketing Basics (3 weeks)',
+        'SEO & Content Marketing (4 weeks)',
+        'Social Media Strategy (3 weeks)',
+        'Paid Advertising (3 weeks)',
+        'Analytics & Reporting (2 weeks)',
+        'Campaign Management (3 weeks)'
+      ],
+      projects: [
+        'SEO Website Optimization',
+        'Social Media Campaign',
+        'Google Ads Campaign',
+        'Email Marketing Funnel'
+      ]
     }
   ];
 
-  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development'];
+  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Design', 'Programming', 'Marketing'];
 
   const filteredCourses = selectedCategory === 'All' 
     ? courses 

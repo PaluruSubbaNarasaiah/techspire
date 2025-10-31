@@ -20,7 +20,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       category: 'Web Development',
       price: 49999,
       features: ['HTML5, CSS3, JavaScript ES6+', 'React.js with Hooks', 'Node.js & Express.js', 'MongoDB & PostgreSQL', 'RESTful APIs', 'AWS Cloud Deployment'],
-      is_popular: true
+      is_popular: true,
+      tag: 'Most Popular'
     },
     {
       id: '2',
@@ -31,7 +32,8 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       category: 'Data Science',
       price: 59999,
       features: ['Python Programming', 'Data Analysis with Pandas', 'Machine Learning Algorithms', 'Deep Learning with TensorFlow', 'Data Visualization', 'Statistical Analysis'],
-      is_popular: false
+      is_popular: false,
+      tag: 'High Demand'
     },
     {
       id: '3',
@@ -42,11 +44,120 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       category: 'Cloud Computing',
       price: 39999,
       features: ['AWS Core Services', 'Serverless with Lambda', 'Container Services', 'Networking & Security', 'Monitoring & Logging', 'Infrastructure as Code'],
-      is_popular: false
+      is_popular: false,
+      tag: 'Quick Start'
+    },
+    {
+      id: '4',
+      title: 'Mobile App Development',
+      description: 'Build native and cross-platform mobile apps with React Native and Flutter',
+      duration: '5 months',
+      level: 'Intermediate',
+      category: 'Mobile Development',
+      price: 44999,
+      features: ['React Native', 'Flutter & Dart', 'iOS & Android Development', 'Firebase Integration', 'App Store Deployment', 'Push Notifications'],
+      is_popular: false,
+      tag: 'Trending'
+    },
+    {
+      id: '5',
+      title: 'DevOps Engineering',
+      description: 'Master CI/CD, containerization, and cloud infrastructure automation',
+      duration: '5 months',
+      level: 'Advanced',
+      category: 'DevOps',
+      price: 54999,
+      features: ['Docker & Kubernetes', 'Jenkins CI/CD', 'Terraform', 'AWS/Azure DevOps', 'Monitoring & Logging', 'Infrastructure as Code'],
+      is_popular: false,
+      tag: 'Industry Ready'
+    },
+    {
+      id: '6',
+      title: 'Cybersecurity Specialist',
+      description: 'Comprehensive cybersecurity training with ethical hacking and security analysis',
+      duration: '6 months',
+      level: 'Intermediate',
+      category: 'Cybersecurity',
+      price: 52999,
+      features: ['Ethical Hacking', 'Network Security', 'Penetration Testing', 'Security Analysis', 'Incident Response', 'Compliance & Governance'],
+      is_popular: false,
+      tag: 'High Salary'
+    },
+    {
+      id: '7',
+      title: 'UI/UX Design',
+      description: 'Create stunning user interfaces and experiences with modern design tools',
+      duration: '4 months',
+      level: 'Beginner to Intermediate',
+      category: 'Design',
+      price: 34999,
+      features: ['Figma & Adobe XD', 'User Research', 'Wireframing & Prototyping', 'Design Systems', 'Usability Testing', 'Responsive Design'],
+      is_popular: false,
+      tag: 'Creative'
+    },
+    {
+      id: '8',
+      title: 'Artificial Intelligence',
+      description: 'Deep dive into AI, neural networks, and advanced machine learning techniques',
+      duration: '10 months',
+      level: 'Advanced',
+      category: 'Artificial Intelligence',
+      price: 69999,
+      features: ['Neural Networks', 'Deep Learning', 'Computer Vision', 'Natural Language Processing', 'AI Ethics', 'Model Deployment'],
+      is_popular: false,
+      tag: 'Future Tech'
+    },
+    {
+      id: '9',
+      title: 'Blockchain Development',
+      description: 'Build decentralized applications and smart contracts on various blockchain platforms',
+      duration: '6 months',
+      level: 'Advanced',
+      category: 'Blockchain',
+      price: 57999,
+      features: ['Solidity Programming', 'Smart Contracts', 'Web3.js', 'DeFi Development', 'NFT Creation', 'Blockchain Security'],
+      is_popular: false,
+      tag: 'Emerging Tech'
+    },
+    {
+      id: '10',
+      title: 'Python Programming',
+      description: 'Master Python from basics to advanced with real-world applications',
+      duration: '3 months',
+      level: 'Beginner',
+      category: 'Programming',
+      price: 24999,
+      features: ['Python Fundamentals', 'Object-Oriented Programming', 'Web Scraping', 'API Development', 'Database Integration', 'Automation Scripts'],
+      is_popular: false,
+      tag: 'Beginner Friendly'
+    },
+    {
+      id: '11',
+      title: 'Java Full Stack',
+      description: 'Complete Java development with Spring Boot and modern frameworks',
+      duration: '7 months',
+      level: 'Intermediate',
+      category: 'Programming',
+      price: 54999,
+      features: ['Core Java', 'Spring Boot', 'Hibernate', 'Microservices', 'REST APIs', 'Database Design'],
+      is_popular: false,
+      tag: 'Enterprise Ready'
+    },
+    {
+      id: '12',
+      title: 'Digital Marketing',
+      description: 'Master online marketing strategies and grow businesses digitally',
+      duration: '4 months',
+      level: 'Beginner to Intermediate',
+      category: 'Marketing',
+      price: 29999,
+      features: ['SEO & SEM', 'Social Media Marketing', 'Content Marketing', 'Email Marketing', 'Analytics', 'PPC Campaigns'],
+      is_popular: false,
+      tag: 'Business Growth'
     }
   ];
 
-  const categories = ['All', 'Full Stack', 'Data Science', 'Cloud', 'DevOps', 'Web Development'];
+  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Cybersecurity', 'Design', 'Artificial Intelligence', 'Blockchain', 'Programming', 'Marketing'];
 
   const filteredCourses = filter === 'All'
     ? courses
@@ -87,9 +198,22 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 hover-lift animate-fadeInUp"
               style={{animationDelay: `${idx * 0.1}s`}}
             >
-              {course.is_popular && (
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 font-semibold">
-                  Most Popular
+              {course.tag && (
+                <div className={`text-white text-center py-2 font-semibold text-sm ${
+                  course.tag === 'Most Popular' ? 'bg-gradient-to-r from-orange-500 to-red-500' :
+                  course.tag === 'High Demand' ? 'bg-gradient-to-r from-green-500 to-green-600' :
+                  course.tag === 'Quick Start' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
+                  course.tag === 'Trending' ? 'bg-gradient-to-r from-purple-500 to-purple-600' :
+                  course.tag === 'Industry Ready' ? 'bg-gradient-to-r from-indigo-500 to-indigo-600' :
+                  course.tag === 'High Salary' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' :
+                  course.tag === 'Creative' ? 'bg-gradient-to-r from-pink-500 to-pink-600' :
+                  course.tag === 'Future Tech' ? 'bg-gradient-to-r from-cyan-500 to-cyan-600' :
+                  course.tag === 'Emerging Tech' ? 'bg-gradient-to-r from-teal-500 to-teal-600' :
+                  course.tag === 'Beginner Friendly' ? 'bg-gradient-to-r from-lime-500 to-lime-600' :
+                  course.tag === 'Enterprise Ready' ? 'bg-gradient-to-r from-slate-500 to-slate-600' :
+                  'bg-gradient-to-r from-rose-500 to-rose-600'
+                }`}>
+                  {course.tag}
                 </div>
               )}
               <div className="p-6">
