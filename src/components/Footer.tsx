@@ -12,19 +12,19 @@ export default function Footer() {
               Empowering students with industry-ready skills. Join us to transform your career with expert-led training and guaranteed placement support.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+              <a href="https://facebook.com/techspireacademy" target="_blank" rel="noopener noreferrer" className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-blue-400 p-2 rounded-full hover:bg-blue-500 transition">
+              <a href="https://twitter.com/techspireacademy" target="_blank" rel="noopener noreferrer" className="bg-blue-400 p-2 rounded-full hover:bg-blue-500 transition">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-blue-700 p-2 rounded-full hover:bg-blue-800 transition">
+              <a href="https://linkedin.com/company/techspireacademy" target="_blank" rel="noopener noreferrer" className="bg-blue-700 p-2 rounded-full hover:bg-blue-800 transition">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition">
+              <a href="https://instagram.com/techspireacademy" target="_blank" rel="noopener noreferrer" className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="bg-red-600 p-2 rounded-full hover:bg-red-700 transition">
+              <a href="https://youtube.com/@techspireacademy" target="_blank" rel="noopener noreferrer" className="bg-red-600 p-2 rounded-full hover:bg-red-700 transition">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
