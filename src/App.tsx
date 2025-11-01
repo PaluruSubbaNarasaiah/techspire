@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import EnrollForm from './components/EnrollForm';
 import Chatbot from './components/Chatbot';
 import SEOHead from './components/SEOHead';
+import LoadingScreen from './components/LoadingScreen';
 import Home from './pages/Home';
 import About from './pages/About';
 import CoursesPage from './pages/CoursesPage';
@@ -27,8 +28,16 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [isEnrollFormOpen, setIsEnrollFormOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const openEnrollForm = (course = '') => {
     setSelectedCourse(course);
@@ -43,6 +52,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen">
+        {isLoading && <LoadingScreen />}
         <ScrollToTop />
         <SEOHead />
         <Navbar onEnrollClick={openEnrollForm} />

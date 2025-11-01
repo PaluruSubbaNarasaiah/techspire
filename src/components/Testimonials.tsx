@@ -1,4 +1,5 @@
 import { Quote, Star } from 'lucide-react';
+import CompanyLogos from './CompanyLogos';
 
 
 
@@ -136,6 +137,7 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+        <CompanyLogos />
       </div>
     </section>
   );
