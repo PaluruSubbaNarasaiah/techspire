@@ -146,7 +146,7 @@ export default function TechNews() {
             <a href="https://www.wired.com" target="_blank" rel="noopener noreferrer"
                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <img 
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=160&fit=crop&crop=center" 
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=160&fit=crop&crop=center" 
                 alt="Wired Magazine"
                 className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
               />
