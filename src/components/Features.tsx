@@ -86,7 +86,10 @@ export default function Features() {
                 Join thousands of successful students who transformed their careers with Tech Spire Academy.
                 Get personalized guidance and achieve your career goals.
               </p>
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold">
+              <button 
+                onClick={() => window.location.href = '/contact'}
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-semibold shadow-lg hover:shadow-xl"
+              >
                 Book Free Consultation
               </button>
             </div>

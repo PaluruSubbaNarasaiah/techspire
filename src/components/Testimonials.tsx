@@ -1,5 +1,6 @@
 import { Quote, Star } from 'lucide-react';
 import CompanyLogos from './CompanyLogos';
+import TechNews from './TechNews';
 
 
 
@@ -139,6 +140,7 @@ export default function Testimonials() {
         </div>
         <CompanyLogos />
       </div>
+      <TechNews />
     </section>
   );
 }
