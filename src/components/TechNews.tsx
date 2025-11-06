@@ -71,7 +71,9 @@ export default function TechNews() {
                 <img 
                   src={news.image} 
                   alt={news.title}
-                  className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform"
                 />
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -133,7 +135,9 @@ export default function TechNews() {
               <img 
                 src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=160&fit=crop&crop=center" 
                 alt="TechCrunch News"
-                className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform"
               />
               <div className="p-6 text-center">
                 <div className="flex items-center justify-center mb-3">
@@ -148,7 +152,9 @@ export default function TechNews() {
               <img 
                 src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=160&fit=crop&crop=center" 
                 alt="Wired Magazine"
-                className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform"
               />
               <div className="p-6 text-center">
                 <div className="flex items-center justify-center mb-3">
@@ -163,7 +169,9 @@ export default function TechNews() {
               <img 
                 src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=160&fit=crop&crop=center" 
                 alt="Stack Overflow Developer Community"
-                className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform"
               />
               <div className="p-6 text-center">
                 <div className="flex items-center justify-center mb-3">

@@ -13,6 +13,30 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Critical CSS optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-scroll {
+  will-change: scroll-position;
+}
+
+/* Lazy loading optimization */
+img {
+  loading: lazy;
+  decoding: async;
+}
+
+/* Reduce layout shifts */
+.aspect-ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
 /* Smooth transitions */
 .transition {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,6 +143,14 @@ button:hover {
 
 .animation-delay-300 {
   animation-delay: 0.3s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
 }
 
 /* Scrolling animation */

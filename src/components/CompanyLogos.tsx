@@ -38,7 +38,9 @@ export default function CompanyLogos() {
                 <img 
                   src={company.logo} 
                   alt={`${company.name} logo`}
-                  className="h-12 w-auto mb-2 group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-12 w-auto mb-2 group-hover:scale-110 transition-transform duration-300 will-change-transform"
                   onError={(e) => {
                     // Fallback to text if logo fails to load
                     e.currentTarget.style.display = 'none';

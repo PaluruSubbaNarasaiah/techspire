@@ -6,6 +6,7 @@ import EnrollForm from './components/EnrollForm';
 import Chatbot from './components/Chatbot';
 import SEOHead from './components/SEOHead';
 import LoadingScreen from './components/LoadingScreen';
+import NetworkError from './components/NetworkError';
 import Home from './pages/Home';
 import About from './pages/About';
 import CoursesPage from './pages/CoursesPage';
@@ -53,6 +54,7 @@ function App() {
     <Router>
       <div className="min-h-screen">
         {isLoading && <LoadingScreen />}
+        <NetworkError />
         <ScrollToTop />
         <SEOHead />
         <Navbar onEnrollClick={openEnrollForm} />
