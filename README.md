@@ -162,7 +162,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Tech Spire Academy**
 - Website: [techspireacademy.com](https://techspireacademy.com)
 - Email: info@techspireacademy.com
-- Phone: +91-9876543210
+- Phone: +91-8978084121
 
 ## 🙏 Acknowledgments
 
@@ -173,4 +173,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ by Tech Spire Academy Team**
+**Built with ❤️ by Basel Dynamic Tech Solutions**
