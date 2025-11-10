@@ -9,6 +9,7 @@ interface CoursesProps {
 
 export default function Courses({ onEnrollClick }: CoursesProps) {
   const [filter, setFilter] = useState('All');
+  const [typeFilter, setTypeFilter] = useState('All');
 
   const courses = [
     {
@@ -166,14 +167,67 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       is_popular: false,
       tag: 'Business Growth',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop'
+    },
+    {
+      id: '13',
+      title: 'Medical Coding',
+      description: 'Learn medical coding and billing for healthcare industry careers',
+      duration: '6 months',
+      level: 'Beginner to Intermediate',
+      category: 'Healthcare',
+      price: 35999,
+      features: ['ICD-10 Coding', 'CPT Coding', 'Medical Terminology', 'Healthcare Documentation', 'Insurance Claims', 'HIPAA Compliance'],
+      is_popular: false,
+      tag: 'High Demand',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop'
+    },
+    {
+      id: '14',
+      title: 'Accounting & Finance',
+      description: 'Master accounting principles and financial management skills',
+      duration: '5 months',
+      level: 'Beginner to Advanced',
+      category: 'Finance',
+      price: 32999,
+      features: ['Financial Accounting', 'Cost Accounting', 'Taxation', 'Financial Analysis', 'Excel for Finance', 'QuickBooks'],
+      is_popular: false,
+      tag: 'Career Ready',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop'
+    },
+    {
+      id: '15',
+      title: 'Human Resources Management',
+      description: 'Comprehensive HR training covering recruitment to employee relations',
+      duration: '4 months',
+      level: 'Beginner to Intermediate',
+      category: 'Human Resources',
+      price: 28999,
+      features: ['Recruitment & Selection', 'Employee Relations', 'Performance Management', 'HR Analytics', 'Labor Laws', 'Payroll Management'],
+      is_popular: false,
+      tag: 'Management',
+      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop'
     }
   ];
 
   const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Cybersecurity', 'Design', 'Artificial Intelligence', 'Blockchain', 'Programming', 'Marketing'];
+  const courseTypes = ['All', 'IT', 'Non-IT'];
+  
+  const itCategories = ['Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Cybersecurity', 'Artificial Intelligence', 'Blockchain', 'Programming'];
+  const nonItCategories = ['Design', 'Marketing', 'Healthcare', 'Finance', 'Human Resources'];
 
-  const filteredCourses = filter === 'All'
-    ? courses
-    : courses.filter(course => course.category === filter);
+  let filteredCourses = courses;
+  
+  // Filter by IT/Non-IT type first
+  if (typeFilter === 'IT') {
+    filteredCourses = courses.filter(course => itCategories.includes(course.category));
+  } else if (typeFilter === 'Non-IT') {
+    filteredCourses = courses.filter(course => nonItCategories.includes(course.category));
+  }
+  
+  // Then filter by specific category
+  if (filter !== 'All') {
+    filteredCourses = filteredCourses.filter(course => course.category === filter);
+  }
 
 
 
@@ -187,20 +241,48 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-4">
-          {categories.map((category) => (
+        {/* Course Type Filter */}
+        <div className="flex justify-center gap-4 mb-8">
+          {courseTypes.map((type) => (
             <button
-              key={category}
-              onClick={() => setFilter(category)}
-              className={`px-3 sm:px-6 py-2 text-sm sm:text-base rounded-full transition ${
-                filter === category
-                  ? 'bg-blue-600 text-white'
+              key={type}
+              onClick={() => {
+                setTypeFilter(type);
+                setFilter('All'); // Reset category when type changes
+              }}
+              className={`px-6 py-3 rounded-full transition font-semibold ${
+                typeFilter === type
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
-              {category}
+              {type === 'All' ? 'All Courses' : `${type} Courses`}
             </button>
           ))}
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-4">
+          {categories
+            .filter(category => {
+              if (typeFilter === 'IT') return category === 'All' || itCategories.includes(category);
+              if (typeFilter === 'Non-IT') return category === 'All' || nonItCategories.includes(category);
+              return true;
+            })
+            .map((category) => (
+              <button
+                key={category}
+                onClick={() => setFilter(category)}
+                className={`px-3 sm:px-6 py-2 text-sm sm:text-base rounded-full transition ${
+                  filter === category
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {category}
+              </button>
+            ))
+          }
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -272,14 +354,10 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
                   </ul>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-3xl font-bold text-gray-900">₹{course.price.toLocaleString()}</p>
-                    <p className="text-sm text-gray-500">One-time payment</p>
-                  </div>
+                <div className="flex justify-center">
                   <button 
                     onClick={() => onEnrollClick(course.title)}
-                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+                    className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-semibold w-full"
                   >
                     Enroll Now
                   </button>

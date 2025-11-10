@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Clock, Users, Award, CheckCircle, Play, Download } from 'lucide-react';
 
 interface CoursesPageProps {
@@ -6,7 +7,18 @@ interface CoursesPageProps {
 }
 
 export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedType, setSelectedType] = useState('All'); // IT, Non-IT, All
+  
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam === 'IT') {
+      setSelectedType('IT');
+    } else if (categoryParam === 'Non-IT') {
+      setSelectedType('Non-IT');
+    }
+  }, [searchParams]);
 
   const courses = [
     {
@@ -305,14 +317,127 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         'Google Ads Campaign',
         'Email Marketing Funnel'
       ]
+    },
+    {
+      id: 10,
+      title: 'Medical Coding',
+      category: 'Healthcare',
+      duration: '6 months',
+      level: 'Beginner to Intermediate',
+      price: 35999,
+      rating: 4.6,
+      students: 480,
+      description: 'Learn medical coding and billing for healthcare industry careers',
+      features: [
+        'ICD-10 Diagnosis Coding',
+        'CPT Procedure Coding',
+        'Medical Terminology',
+        'Healthcare Documentation',
+        'Insurance Claims Processing',
+        'HIPAA Compliance'
+      ],
+      modules: [
+        'Medical Terminology (3 weeks)',
+        'Anatomy & Physiology (4 weeks)',
+        'ICD-10 Coding (6 weeks)',
+        'CPT Coding (5 weeks)',
+        'Medical Billing (4 weeks)',
+        'Certification Prep (2 weeks)'
+      ],
+      projects: [
+        'Medical Records Coding',
+        'Insurance Claim Processing',
+        'Coding Audit Project',
+        'Healthcare Database Management'
+      ]
+    },
+    {
+      id: 11,
+      title: 'Accounting & Finance',
+      category: 'Finance',
+      duration: '5 months',
+      level: 'Beginner to Advanced',
+      price: 32999,
+      rating: 4.5,
+      students: 620,
+      description: 'Master accounting principles and financial management skills',
+      features: [
+        'Financial Accounting Principles',
+        'Cost & Management Accounting',
+        'Taxation & Compliance',
+        'Financial Statement Analysis',
+        'Excel for Financial Modeling',
+        'QuickBooks & Tally'
+      ],
+      modules: [
+        'Accounting Fundamentals (4 weeks)',
+        'Financial Statements (4 weeks)',
+        'Cost Accounting (3 weeks)',
+        'Taxation (4 weeks)',
+        'Financial Analysis (3 weeks)',
+        'Software Training (3 weeks)'
+      ],
+      projects: [
+        'Financial Statement Preparation',
+        'Budget Planning & Analysis',
+        'Tax Return Filing',
+        'Investment Portfolio Analysis'
+      ]
+    },
+    {
+      id: 12,
+      title: 'Human Resources Management',
+      category: 'Human Resources',
+      duration: '4 months',
+      level: 'Beginner to Intermediate',
+      price: 28999,
+      rating: 4.3,
+      students: 390,
+      description: 'Comprehensive HR training covering recruitment to employee relations',
+      features: [
+        'Recruitment & Selection Process',
+        'Employee Relations Management',
+        'Performance Management Systems',
+        'HR Analytics & Metrics',
+        'Labor Laws & Compliance',
+        'Payroll & Benefits Administration'
+      ],
+      modules: [
+        'HR Fundamentals (3 weeks)',
+        'Recruitment Strategies (4 weeks)',
+        'Employee Management (4 weeks)',
+        'Performance Systems (3 weeks)',
+        'Legal Compliance (2 weeks)',
+        'HR Technology (2 weeks)'
+      ],
+      projects: [
+        'Recruitment Campaign Design',
+        'Performance Appraisal System',
+        'Employee Engagement Survey',
+        'HR Policy Development'
+      ]
     }
   ];
 
-  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Design', 'Programming', 'Marketing'];
+  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Design', 'Programming', 'Marketing', 'Healthcare', 'Finance', 'Human Resources'];
+  const courseTypes = ['All', 'IT', 'Non-IT'];
+  
+  const itCategories = ['Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Programming'];
+  const nonItCategories = ['Design', 'Marketing', 'Healthcare', 'Finance', 'Human Resources'];
 
-  const filteredCourses = selectedCategory === 'All' 
-    ? courses 
-    : courses.filter(course => course.category === selectedCategory);
+  let filteredCourses = courses;
+  
+  // Filter by IT/Non-IT type first
+  if (selectedType === 'IT') {
+    filteredCourses = courses.filter(course => itCategories.includes(course.category));
+  } else if (selectedType === 'Non-IT') {
+    filteredCourses = courses.filter(course => nonItCategories.includes(course.category));
+  }
+  
+  // Then filter by specific category
+  if (selectedCategory !== 'All') {
+    filteredCourses = filteredCourses.filter(course => course.category === selectedCategory);
+  }
 
   return (
     <div className="pt-20">
@@ -326,23 +451,57 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         </div>
       </section>
 
+      {/* Course Type Filter */}
+      <section className="py-8 bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Choose Course Type</h2>
+            <div className="flex justify-center gap-4">
+              {courseTypes.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => {
+                    setSelectedType(type);
+                    setSelectedCategory('All'); // Reset category when type changes
+                  }}
+                  className={`px-8 py-3 rounded-full transition font-semibold ${
+                    selectedType === type
+                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {type === 'All' ? 'All Courses' : `${type} Courses`}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Course Categories */}
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full transition ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            {categories
+              .filter(category => {
+                if (selectedType === 'IT') return category === 'All' || itCategories.includes(category);
+                if (selectedType === 'Non-IT') return category === 'All' || nonItCategories.includes(category);
+                return true;
+              })
+              .map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-6 py-3 rounded-full transition ${
+                    selectedCategory === category
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))
+            }
           </div>
         </div>
       </section>
@@ -359,6 +518,13 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
                     <div className="flex items-center gap-4 mb-4">
                       <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
                         {course.category}
+                      </span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        itCategories.includes(course.category) 
+                          ? 'bg-green-100 text-green-700' 
+                          : 'bg-purple-100 text-purple-700'
+                      }`}>
+                        {itCategories.includes(course.category) ? 'IT Course' : 'Non-IT Course'}
                       </span>
                       <div className="flex items-center text-yellow-500">
                         <Award className="h-4 w-4 mr-1" />
@@ -401,8 +567,8 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
                   {/* Enrollment Card */}
                   <div className="bg-gray-50 p-6 rounded-xl">
                     <div className="text-center mb-6">
-                      <p className="text-4xl font-bold text-gray-900">₹{course.price.toLocaleString()}</p>
-                      <p className="text-gray-500">One-time payment</p>
+                      <p className="text-2xl font-bold text-blue-600">Premium Course</p>
+                      <p className="text-gray-500">Contact for pricing details</p>
                     </div>
 
                     <button

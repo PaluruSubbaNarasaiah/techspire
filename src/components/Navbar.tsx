@@ -11,12 +11,25 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
   const [showCourses, setShowCourses] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const popularCourses = [
+  const itCourses = [
     { name: 'Full Stack Web Development', tag: 'Most Popular', color: 'text-orange-600' },
     { name: 'Data Science & ML', tag: 'High Demand', color: 'text-green-600' },
     { name: 'AWS Cloud Computing', tag: 'Quick Start', color: 'text-blue-600' },
     { name: 'Mobile App Development', tag: 'Trending', color: 'text-purple-600' },
-    { name: 'DevOps Engineering', tag: 'Industry Ready', color: 'text-indigo-600' }
+    { name: 'DevOps Engineering', tag: 'Industry Ready', color: 'text-indigo-600' },
+    { name: 'Cybersecurity Specialist', tag: 'High Salary', color: 'text-red-600' },
+    { name: 'Artificial Intelligence', tag: 'Future Tech', color: 'text-cyan-600' },
+    { name: 'Blockchain Development', tag: 'Emerging Tech', color: 'text-teal-600' },
+    { name: 'Python Programming', tag: 'Beginner Friendly', color: 'text-lime-600' },
+    { name: 'Java Full Stack', tag: 'Enterprise Ready', color: 'text-slate-600' }
+  ];
+
+  const nonItCourses = [
+    { name: 'UI/UX Design', tag: 'Creative', color: 'text-pink-600' },
+    { name: 'Digital Marketing', tag: 'Business Growth', color: 'text-rose-600' },
+    { name: 'Medical Coding', tag: 'High Demand', color: 'text-green-600' },
+    { name: 'Accounting & Finance', tag: 'Career Ready', color: 'text-blue-600' },
+    { name: 'Human Resources Management', tag: 'Management', color: 'text-purple-600' }
   ];
 
   return (
@@ -71,27 +84,53 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
               </Link>
               
               {showCourses && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-gray-100 py-4 animate-fadeIn">
+                <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-xl shadow-xl border border-gray-100 py-4 animate-fadeIn">
+                  {/* IT Courses Section */}
                   <div className="px-4 pb-3 border-b border-gray-100">
                     <h3 className="font-semibold text-gray-900 flex items-center gap-2">
-                      <Star className="h-4 w-4 text-yellow-500" />
-                      Popular Courses
+                      <Star className="h-4 w-4 text-blue-500" />
+                      IT Courses
                     </h3>
                   </div>
-                  {popularCourses.map((course, idx) => (
+                  <div className="max-h-48 overflow-y-auto">
+                    {itCourses.map((course, idx) => (
+                      <Link
+                        key={idx}
+                        to={`/courses?category=IT&course=${encodeURIComponent(course.name)}`}
+                        className="block px-4 py-2 hover:bg-blue-50 transition-colors duration-200"
+                      >
+                        <div className="flex flex-col space-y-1">
+                          <span className="font-medium text-gray-900 text-sm">{course.name}</span>
+                          <span className={`text-xs px-2 py-1 rounded-full bg-gray-100 ${course.color} self-start`}>
+                            {course.tag}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  
+                  {/* Non-IT Courses Section */}
+                  <div className="px-4 py-3 border-t border-gray-100">
+                    <h3 className="font-semibold text-gray-900 flex items-center gap-2">
+                      <Star className="h-4 w-4 text-green-500" />
+                      Non-IT Courses
+                    </h3>
+                  </div>
+                  {nonItCourses.map((course, idx) => (
                     <Link
                       key={idx}
-                      to="/courses"
-                      className="block px-4 py-3 hover:bg-blue-50 transition-colors duration-200"
+                      to={`/courses?category=Non-IT&course=${encodeURIComponent(course.name)}`}
+                      className="block px-4 py-2 hover:bg-green-50 transition-colors duration-200"
                     >
                       <div className="flex flex-col space-y-1">
-                        <span className="font-medium text-gray-900">{course.name}</span>
+                        <span className="font-medium text-gray-900 text-sm">{course.name}</span>
                         <span className={`text-xs px-2 py-1 rounded-full bg-gray-100 ${course.color} self-start`}>
                           {course.tag}
                         </span>
                       </div>
                     </Link>
                   ))}
+                  
                   <div className="px-4 pt-3 border-t border-gray-100">
                     <Link to="/courses" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
                       View All Courses →
