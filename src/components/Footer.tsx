@@ -66,13 +66,13 @@ export default function Footer() {
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-400 mr-3" />
                 <a href="tel:+919876543210" className="text-gray-400 hover:text-blue-400 transition">
-                  +91 9876543210
+                  +91 88865 56393
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-3" />
-                <a href="mailto:info@techspireacademy.com" className="text-gray-400 hover:text-blue-400 transition">
-                  info@techspireacademy.com
+                <a href="mailto:info@techspireacademy.in" className="text-gray-400 hover:text-blue-400 transition">
+                  info@techspireacademy.in
                 </a>
               </li>
             </ul>

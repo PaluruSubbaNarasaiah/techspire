@@ -21,7 +21,7 @@ export default function Chatbot() {
     "admission process": "Simple 4-step process: 1) Choose course 2) Submit application 3) Assessment & interview 4) Enrollment & payment. You can start by clicking 'Enroll Now' on any course.",
     "fees & payment": "We offer flexible payment options: One-time payment (10% off), 3-month EMI (0% interest), and 6-month EMI (low interest). All courses include lifetime access.",
     "placement support": "We provide 100% placement assistance with resume building, interview preparation, and connections to 500+ hiring partners. 95% of our students get placed within 6 months.",
-    "contact details": "📞 +91 9876543210 | 📧 info@techspireacademy.com | 📍 Koramangala, Bangalore. Office hours: Mon-Fri 9AM-7PM, Sat 10AM-5PM."
+    "contact details": "📞 +91 88865 56393 | 📧 info@techspireacademy.in | 📍 Koramangala, Bangalore. Office hours: Mon-Fri 9AM-7PM, Sat 10AM-5PM."
   };
 
   const handleSend = () => {
@@ -30,7 +30,7 @@ export default function Chatbot() {
     setMessages(prev => [...prev, { text: input, isBot: false }]);
     
     const response = botResponses[input.toLowerCase()] || 
-      "I'd be happy to help! For detailed information, please contact our team at +91 9876543210 or use our contact form.";
+      "I'd be happy to help! For detailed information, please contact our team at +91 88865 56393 or use our contact form.";
     
     setTimeout(() => {
       setMessages(prev => [...prev, { text: response, isBot: true }]);
@@ -43,7 +43,7 @@ export default function Chatbot() {
     setMessages(prev => [...prev, { text: reply, isBot: false }]);
     
     const response = botResponses[reply.toLowerCase()] || 
-      "Let me connect you with our team for detailed information. Please call +91 9876543210.";
+      "Let me connect you with our team for detailed information. Please call +91 88865 56393.";
     
     setTimeout(() => {
       setMessages(prev => [...prev, { text: response, isBot: true }]);

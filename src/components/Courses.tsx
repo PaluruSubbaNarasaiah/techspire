@@ -206,14 +206,27 @@ export default function Courses({ onEnrollClick }: CoursesProps) {
       is_popular: false,
       tag: 'Management',
       image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop'
+    },
+    {
+      id: '16',
+      title: 'Mortgage Processing',
+      description: 'Learn mortgage processing and loan underwriting for finance careers',
+      duration: '5 months',
+      level: 'Beginner to Intermediate',
+      category: 'Mortgage',
+      price: 31999,
+      features: ['Mortgage Processing', 'Loan Underwriting', 'Credit Analysis', 'Property Valuation', 'Compliance & Documentation', 'Industry Software'],
+      is_popular: false,
+      tag: 'Finance Sector',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop'
     }
   ];
 
   const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Cybersecurity', 'Design', 'Artificial Intelligence', 'Blockchain', 'Programming', 'Marketing'];
   const courseTypes = ['All', 'IT', 'Non-IT'];
   
-  const itCategories = ['Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Cybersecurity', 'Artificial Intelligence', 'Blockchain', 'Programming'];
-  const nonItCategories = ['Design', 'Marketing', 'Healthcare', 'Finance', 'Human Resources'];
+  const itCategories = ['Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Cybersecurity', 'Design', 'Artificial Intelligence', 'Blockchain', 'Programming'];
+  const nonItCategories = ['Marketing', 'Healthcare', 'Finance', 'Human Resources', 'Mortgage'];
 
   let filteredCourses = courses;
   

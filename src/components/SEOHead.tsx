@@ -24,7 +24,7 @@ const pageData = {
   },
   '/contact': {
     title: 'Contact Tech Spire Academy - Get in Touch for Course Inquiries',
-    description: 'Contact Tech Spire Academy for course inquiries, admissions, and career guidance. Located in Bangalore with online support. Call +91 9876543210.',
+    description: 'Contact Tech Spire Academy for course inquiries, admissions, and career guidance. Located in Bangalore with online support. Call +91 88865 56393.',
     keywords: 'tech academy contact, course inquiry, admission help, career guidance'
   },
   '/success-stories': {

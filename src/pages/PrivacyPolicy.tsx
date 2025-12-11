@@ -41,8 +41,8 @@ export default function PrivacyPolicy() {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
             <p className="text-gray-600">
-              If you have questions about this Privacy Policy, please contact us at info@techspireacademy.com 
-              or call +91 9876543210.
+              If you have questions about this Privacy Policy, please contact us at info@techspireacademy.in 
+              or call +91 88865 56393.
             </p>
           </div>
         </div>

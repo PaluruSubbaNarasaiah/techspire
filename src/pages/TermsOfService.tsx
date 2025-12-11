@@ -46,7 +46,7 @@ export default function TermsOfService() {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h2>
             <p className="text-gray-600">
-              For questions regarding these terms, contact us at info@techspireacademy.com or +91 9876543210.
+              For questions regarding these terms, contact us at info@techspireacademy.in or +91 88865 56393.
             </p>
           </div>
         </div>

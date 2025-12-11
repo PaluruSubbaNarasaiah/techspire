@@ -164,16 +164,16 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-blue-600 mr-4 mt-1" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600">+91 9876543210</p>
-                      <p className="text-gray-600">+91 8765432109</p>
+                      <p className="text-gray-600">+91 88865 56393</p>
+                      <p className="text-gray-600">+91 99660 09269</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <Mail className="h-6 w-6 text-blue-600 mr-4 mt-1" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600">info@techspireacademy.com</p>
-                      <p className="text-gray-600">admissions@techspireacademy.com</p>
+                      <p className="text-gray-600">info@techspireacademy.in</p>
+                      <p className="text-gray-600">admissions@techspireacademy.in</p>
                     </div>
                   </div>
                   <div className="flex items-start">

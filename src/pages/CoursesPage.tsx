@@ -416,14 +416,47 @@ export default function CoursesPage({ onEnrollClick }: CoursesPageProps) {
         'Employee Engagement Survey',
         'HR Policy Development'
       ]
+    },
+    {
+      id: 13,
+      title: 'Mortgage Processing',
+      category: 'Mortgage',
+      duration: '5 months',
+      level: 'Beginner to Intermediate',
+      price: 31999,
+      rating: 4.4,
+      students: 320,
+      description: 'Learn mortgage processing and loan underwriting for finance careers',
+      features: [
+        'Mortgage Processing & Documentation',
+        'Loan Underwriting Principles',
+        'Credit Analysis & Risk Assessment',
+        'Property Valuation Methods',
+        'Regulatory Compliance (TRID, QM)',
+        'Industry Software Training'
+      ],
+      modules: [
+        'Mortgage Industry Overview (3 weeks)',
+        'Loan Processing Fundamentals (5 weeks)',
+        'Underwriting Principles (4 weeks)',
+        'Credit Analysis (3 weeks)',
+        'Compliance & Regulations (3 weeks)',
+        'Industry Software Training (2 weeks)'
+      ],
+      projects: [
+        'Loan Application Processing',
+        'Credit Analysis Report',
+        'Compliance Audit Project',
+        'Mortgage Portfolio Review'
+      ]
     }
   ];
 
-  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Design', 'Programming', 'Marketing', 'Healthcare', 'Finance', 'Human Resources'];
+  const categories = ['All', 'Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Design', 'Programming', 'Marketing', 'Healthcare', 'Finance', 'Human Resources', 'Mortgage'];
   const courseTypes = ['All', 'IT', 'Non-IT'];
   
-  const itCategories = ['Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Programming'];
-  const nonItCategories = ['Design', 'Marketing', 'Healthcare', 'Finance', 'Human Resources'];
+  const itCategories = ['Web Development', 'Data Science', 'Cloud Computing', 'Mobile Development', 'DevOps', 'Design', 'Programming'];
+  const nonItCategories = ['Marketing', 'Healthcare', 'Finance', 'Human Resources', 'Mortgage'];
 
   let filteredCourses = courses;
   

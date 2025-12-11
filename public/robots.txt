@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techspireacademy.com/sitemap.xml
+Sitemap: https://techspireacademy.in/sitemap.xml

@@ -160,8 +160,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Tech Spire Academy**
-- Website: [techspireacademy.com](https://techspireacademy.com)
-- Email: info@techspireacademy.com
+- Website: [techspireacademy.in](https://techspireacademy.in)
+- Email: info@techspireacademy.in
 - Phone: +91-8978084121
 
 ## 🙏 Acknowledgments

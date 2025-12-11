@@ -17,6 +17,7 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
     { name: 'AWS Cloud Computing', tag: 'Quick Start', color: 'text-blue-600' },
     { name: 'Mobile App Development', tag: 'Trending', color: 'text-purple-600' },
     { name: 'DevOps Engineering', tag: 'Industry Ready', color: 'text-indigo-600' },
+    { name: 'UI/UX Design', tag: 'Creative', color: 'text-pink-600' },
     { name: 'Cybersecurity Specialist', tag: 'High Salary', color: 'text-red-600' },
     { name: 'Artificial Intelligence', tag: 'Future Tech', color: 'text-cyan-600' },
     { name: 'Blockchain Development', tag: 'Emerging Tech', color: 'text-teal-600' },
@@ -25,11 +26,11 @@ export default function Navbar({ onEnrollClick }: NavbarProps) {
   ];
 
   const nonItCourses = [
-    { name: 'UI/UX Design', tag: 'Creative', color: 'text-pink-600' },
     { name: 'Digital Marketing', tag: 'Business Growth', color: 'text-rose-600' },
     { name: 'Medical Coding', tag: 'High Demand', color: 'text-green-600' },
     { name: 'Accounting & Finance', tag: 'Career Ready', color: 'text-blue-600' },
-    { name: 'Human Resources Management', tag: 'Management', color: 'text-purple-600' }
+    { name: 'Human Resources Management', tag: 'Management', color: 'text-purple-600' },
+    { name: 'Mortgage Processing', tag: 'Finance Sector', color: 'text-amber-600' }
   ];
 
   return (

@@ -27,7 +27,7 @@ export default function RefundPolicy() {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Refund Process</h2>
             <ol className="list-decimal pl-6 text-gray-600 mb-6">
-              <li>Submit refund request via email to refunds@techspireacademy.com</li>
+              <li>Submit refund request via email to refunds@techspireacademy.in</li>
               <li>Include enrollment details and reason for refund</li>
               <li>Our team will review the request within 2-3 business days</li>
               <li>Approved refunds will be processed within 7-10 business days</li>
@@ -50,7 +50,7 @@ export default function RefundPolicy() {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact for Refunds</h2>
             <p className="text-gray-600">
-              For refund requests or questions, email us at refunds@techspireacademy.com or call +91 9876543210.
+              For refund requests or questions, email us at refunds@techspireacademy.in or call +91 88865 56393.
             </p>
           </div>
         </div>
