@@ -58,9 +58,10 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-blue-400 mr-3 mt-1 flex-shrink-0" />
                 <span className="text-gray-400">
-                  Tech Tower, 3rd Floor<br />
-                  Koramangala, Bangalore - 560095<br />
-                  Karnataka, India
+                  23-8-161/2, Second Floor, MR Palli Rd,<br />
+                  above Sri Hari Medical store, SV Nagar,<br />
+                  New Balaji Colony, Tirupati,<br />
+                  Andhra Pradesh - 517501
                 </span>
               </li>
               <li className="flex items-center">

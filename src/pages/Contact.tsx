@@ -182,9 +182,10 @@ export default function Contact() {
                       <h3 className="font-semibold text-gray-900">Address</h3>
                       <p className="text-gray-600">
                         Tech Spire Academy<br />
-                        123 Innovation Hub<br />
-                        Bangalore, Karnataka 560001<br />
-                        India
+                        23-8-161/2, Second Floor, MR Palli Rd,<br />
+                        above Sri Hari Medical store, SV Nagar,<br />
+                        New Balaji Colony, Tirupati,<br />
+                        Andhra Pradesh - 517501
                       </p>
                     </div>
                   </div>
@@ -192,9 +193,8 @@ export default function Contact() {
                     <Clock className="h-6 w-6 text-blue-600 mr-4 mt-1" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Office Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 7:00 PM</p>
-                      <p className="text-gray-600">Saturday: 10:00 AM - 5:00 PM</p>
-                      <p className="text-gray-600">Sunday: Closed</p>
+                      <p className="text-gray-600">Monday - Saturday: 9:00 AM - 9:00 PM</p>
+                      <p className="text-gray-600">Sunday: 9:00 AM - 1:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -243,7 +243,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Campus</h2>
-            <p className="text-xl text-gray-600">Located in the heart of Bangalore's tech district</p>
+            <p className="text-xl text-gray-600">Located in Tirupati, Andhra Pradesh</p>
           </div>
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <iframe
