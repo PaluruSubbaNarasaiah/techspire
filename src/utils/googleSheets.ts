@@ -1,4 +1,4 @@
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxheY9IUoDysXaT_0sHQckqUNp7pnts1dyvUu2vrLsTsHPhI4OwkI3_4i419DvKaxJ4/exec';
 
 export const submitToGoogleSheets = async (data: any, type: string) => {
   try {
